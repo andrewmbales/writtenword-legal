@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WrittenWord — Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text: #2c2418;
+            --text-secondary: #6b5d4d;
+            --bg: #faf8f4;
+            --bg-section: #f3efe8;
+            --accent: #8b6f47;
+            --border: #e0d8cc;
+            --max-width: 680px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 17px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            text-align: center;
+            padding: 64px 24px 48px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        header h1 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        header .subtitle {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        header .updated {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        p {
+            margin-bottom: 14px;
+        }
+
+        ul {
+            margin: 12px 0 14px 20px;
+            list-style: none;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 8px;
+        }
+
+        ul li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: underline;
+            text-decoration-color: rgba(139, 111, 71, 0.3);
+            text-underline-offset: 3px;
+            transition: text-decoration-color 0.2s;
+        }
+
+        a:hover {
+            text-decoration-color: var(--accent);
+        }
+
+        footer {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 32px 24px 64px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        footer a {
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 480px) {
+            header { padding: 48px 20px 36px; }
+            header h1 { font-size: 1.9rem; }
+            main { padding: 36px 20px 60px; }
+            body { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>WrittenWord</h1>
+    <div class="subtitle">Privacy Policy</div>
+    <div class="updated">Last updated: May 9, 2026</div>
+</header>
+
+<main>
+    <section>
+        <p>WrittenWord is a Bible study app designed with your privacy in mind. This policy explains what data the app handles and how.</p>
+    </section>
+
+    <section>
+        <h2>Data Stored on Your Device</h2>
+        <p>All of your study data — including highlights, bookmarks, notes, and annotations — is stored locally on your iPad using Apple's SwiftData framework. The app does not require an account and does not collect any personally identifiable information.</p>
+    </section>
+
+    <section>
+        <h2>iCloud Sync</h2>
+        <p>If you are signed in to iCloud on your device, WrittenWord automatically syncs your study data (highlights, bookmarks, notes, and annotations) across your devices using Apple's CloudKit service. This sync uses Apple's private CloudKit database, which means:</p>
+        <ul>
+            <li>Your data is associated with your iCloud account and is only accessible to you.</li>
+            <li>Synced data is stored on Apple's iCloud servers and is subject to <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</li>
+            <li>No study data is sent to WrittenWord's developers or any third-party servers.</li>
+            <li>If you are not signed in to iCloud, all data remains on your device and no network connections are made for sync purposes.</li>
+        </ul>
+        <p>You can view the current sync status in the app's Settings screen.</p>
+    </section>
+
+    <section>
+        <h2>Local Backups</h2>
+        <p>WrittenWord creates automatic local backups of your study data on your device. These backups are included in your standard iCloud device backup if you have iCloud Backup enabled in your iPad's Settings. Backup management is available within the app under Settings.</p>
+    </section>
+
+    <section>
+        <h2>Bible Text</h2>
+        <p>The NASB 1995 Bible text is stored locally in a read-only database on your device. It is never uploaded, synced, or transmitted over the network.</p>
+    </section>
+
+    <section>
+        <h2>Analytics, Advertising, and Tracking</h2>
+        <p>WrittenWord contains no analytics, advertising, crash reporting, or tracking of any kind. The app does not collect usage data or behavioral information.</p>
+    </section>
+
+    <section>
+        <h2>Children's Privacy</h2>
+        <p>WrittenWord does not collect personal information from anyone, including children.</p>
+    </section>
+
+    <section>
+        <h2>Third-Party Services</h2>
+        <p>The only third-party service used is Apple's CloudKit for iCloud sync, as described above. No other third-party services, SDKs, or APIs are used.</p>
+    </section>
+
+    <section>
+        <h2>Changes</h2>
+        <p>If this policy changes, we will update this page with a new date.</p>
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+        <p>If you have any questions about this Privacy Policy, you can contact us by email: <a href="mailto:writtenwordsupport@gmail.com">writtenwordsupport@gmail.com</a></p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 WrittenWord</p>
+</footer>
+
+</body>
+</html>
