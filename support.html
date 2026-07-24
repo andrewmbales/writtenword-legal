@@ -17,9 +17,7 @@
             --border: #e0d8cc;
             --max-width: 680px;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Source Sans 3', -apple-system, sans-serif;
             background: var(--bg);
@@ -28,13 +26,11 @@
             font-size: 17px;
             -webkit-font-smoothing: antialiased;
         }
-
         header {
             text-align: center;
             padding: 64px 24px 48px;
             border-bottom: 1px solid var(--border);
         }
-
         header h1 {
             font-family: 'Cormorant Garamond', Georgia, serif;
             font-size: 2.4rem;
@@ -43,24 +39,20 @@
             letter-spacing: -0.02em;
             margin-bottom: 8px;
         }
-
         header .subtitle {
             font-family: 'Cormorant Garamond', Georgia, serif;
             font-size: 1.15rem;
             font-style: italic;
             color: var(--text-secondary);
         }
-
         main {
             max-width: var(--max-width);
             margin: 0 auto;
             padding: 48px 24px 80px;
         }
-
         section {
             margin-bottom: 40px;
         }
-
         h2 {
             font-family: 'Cormorant Garamond', Georgia, serif;
             font-size: 1.45rem;
@@ -70,22 +62,24 @@
             padding-bottom: 6px;
             border-bottom: 1px solid var(--border);
         }
-
+        h3 {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            color: var(--text);
+            margin: 20px 0 8px;
+        }
         p {
             margin-bottom: 14px;
         }
-
         ul {
             margin: 12px 0 14px 20px;
             list-style: none;
         }
-
         ul li {
             position: relative;
             padding-left: 16px;
             margin-bottom: 8px;
         }
-
         ul li::before {
             content: '·';
             position: absolute;
@@ -94,7 +88,6 @@
             font-weight: 600;
             font-size: 1.2em;
         }
-
         a {
             color: var(--accent);
             text-decoration: underline;
@@ -102,11 +95,9 @@
             text-underline-offset: 3px;
             transition: text-decoration-color 0.2s;
         }
-
         a:hover {
             text-decoration-color: var(--accent);
         }
-
         .contact-box {
             background: var(--bg-section);
             border: 1px solid var(--border);
@@ -115,12 +106,10 @@
             text-align: center;
             margin: 32px 0;
         }
-
         .contact-box a {
             font-size: 1.1rem;
             font-weight: 600;
         }
-
         footer {
             max-width: var(--max-width);
             margin: 0 auto;
@@ -128,16 +117,13 @@
             border-top: 1px solid var(--border);
             text-align: center;
         }
-
         footer p {
             font-size: 0.9rem;
             color: var(--text-secondary);
         }
-
         footer a {
             color: var(--text-secondary);
         }
-
         @media (max-width: 480px) {
             header { padding: 48px 20px 36px; }
             header h1 { font-size: 1.9rem; }
@@ -147,17 +133,14 @@
     </style>
 </head>
 <body>
-
 <header>
     <h1>WrittenWord</h1>
     <div class="subtitle">Support</div>
 </header>
-
 <main>
     <section>
         <p>WrittenWord is a Bible study app for iPad featuring the NASB 1995 text, interlinear Greek and Hebrew word lookup, handwritten annotations with Apple Pencil, highlights, bookmarks, notes, cross-references, and concordance search.</p>
     </section>
-
     <section>
         <h2>Contact Us</h2>
         <p>If you have a question, found a bug, or want to request a feature, we'd love to hear from you.</p>
@@ -165,36 +148,25 @@
             <a href="mailto:writtenwordsupport@gmail.com">writtenwordsupport@gmail.com</a>
         </div>
     </section>
-
     <section>
         <h2>Frequently Asked Questions</h2>
-
-        <h3 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; color: var(--text); margin: 20px 0 8px;">How do I sync my data across devices?</h3>
+        <h3>How do I sync my data across devices?</h3>
         <p>If you're signed in to iCloud on your iPad, your highlights, bookmarks, notes, and annotations sync automatically. No account or setup is required beyond iCloud sign-in.</p>
-
-        <h3 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; color: var(--text); margin: 20px 0 8px;">Is my data private?</h3>
+        <h3>Is my data private?</h3>
         <p>Yes. All study data is stored on your device and, if you use iCloud, in your private iCloud account. We never see your data. See our <a href="index.html">Privacy Policy</a> for details.</p>
-
-        <h3 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; color: var(--text); margin: 20px 0 8px;">Which Bible translation is included?</h3>
+        <h3>Which Bible translation is included?</h3>
         <p>WrittenWord includes the New American Standard Bible, 1995 edition (NASB 1995), licensed from The Lockman Foundation.</p>
-
-        <h3 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; color: var(--text); margin: 20px 0 8px;">Do I need Apple Pencil?</h3>
+        <h3>Do I need Apple Pencil?</h3>
         <p>Apple Pencil is supported for handwritten annotations but is not required. You can use highlights, bookmarks, typed notes, and all other study features without one.</p>
-
-        <h3 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; color: var(--text); margin: 20px 0 8px;">Is there an iPhone version?</h3>
-        <p>WrittenWord is currently iPad-only. An iPhone version is planned for a future update.</p>
     </section>
-
     <section>
         <h2>Bible Text Attribution</h2>
         <p>Scripture quotations taken from the (NASB®) New American Standard Bible®, Copyright © 1960, 1971, 1977, 1995 by The Lockman Foundation. Used by permission. All rights reserved. <a href="https://www.lockman.org">www.lockman.org</a></p>
     </section>
 </main>
-
 <footer>
     <p><a href="index.html">Privacy Policy</a></p>
     <p style="margin-top: 8px;">&copy; 2026 WrittenWord</p>
 </footer>
-
 </body>
 </html>
