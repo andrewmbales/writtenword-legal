@@ -99,6 +99,14 @@
         a:hover {
             text-decoration-color: var(--accent);
         }
+        code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 0.85em;
+            background: var(--bg-section);
+            padding: 1px 5px;
+            border-radius: 4px;
+        }
+        strong { font-weight: 600; }
         footer {
             max-width: var(--max-width);
             margin: 0 auto;
@@ -125,7 +133,7 @@
 <header>
     <h1>WrittenWord</h1>
     <div class="subtitle">Privacy Policy</div>
-    <div class="updated">Last updated: September 2, 2026</div>
+    <div class="updated">Last updated: October 4, 2026</div>
 </header>
 <main>
     <section>
@@ -133,12 +141,13 @@
     </section>
     <section>
         <h2>Data Stored on Your Device</h2>
-        <p>All of your study data — including highlights, bookmarks, notes, and annotations — is stored locally on your iPad using Apple's SwiftData framework. The app does not require an account and does not collect any personally identifiable information.</p>
-        <p>The app also keeps a short list of your recent searches (up to 25) on your device to speed up searching. This search history stays on your iPad — it is never synced to iCloud or sent to anyone — and you can clear it at any time from within the app.</p>
+        <p>All of your study data — including highlights, bookmarks, notes, annotations, your own cross-references, and your own footnotes — is stored locally on your iPad using Apple's SwiftData framework. The app does not require an account and does not collect any personally identifiable information.</p>
+        <p>The app also keeps a short list of your recent searches (up to 25) on your device to speed up searching. This search history is stored in your device's standard app preferences — it is never synced to iCloud or sent to anyone — and you can clear it at any time from within the app.</p>
+        <p>Your reading position, display preferences (theme, font, sizing, pen settings), and onboarding progress are likewise stored only in your device's app preferences.</p>
     </section>
     <section>
         <h2>iCloud Sync</h2>
-        <p>If you are signed in to iCloud on your device, WrittenWord automatically syncs your study data (highlights, bookmarks, notes, and annotations) across your devices using Apple's CloudKit service. This sync uses Apple's private CloudKit database, which means:</p>
+        <p>If you are signed in to iCloud on your device, WrittenWord automatically syncs your study data (highlights, bookmarks, notes, annotations, and your own cross-references and footnotes) across your devices using Apple's CloudKit service. This sync uses Apple's private CloudKit database, which means:</p>
         <ul>
             <li>Your data is associated with your iCloud account and is only accessible to you.</li>
             <li>Synced data is stored on Apple's iCloud servers and is subject to <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</li>
@@ -146,32 +155,43 @@
             <li>If you are not signed in to iCloud, all data remains on your device and no network connections are made for sync purposes.</li>
         </ul>
         <p>You can view the current sync status in the app's Settings screen.</p>
+        <p>To support this sync, the app declares the <code>remote-notification</code> background mode and Apple's standard CloudKit background task identifiers. These are used solely so iOS can wake the app to exchange your own study data with your own iCloud account. WrittenWord does not send marketing or promotional push notifications.</p>
     </section>
     <section>
         <h2>Local Backups</h2>
-        <p>WrittenWord creates automatic local backups of your study data on your device. These backups are included in your standard iCloud device backup if you have iCloud Backup enabled in your iPad's Settings. Backup management is available within the app under Settings.</p>
+        <p>WrittenWord creates automatic local backups of your study data on your device — on launch, when the app moves to the background, and before any database migration. Older snapshots are rotated out automatically, and you can pin a backup to keep it indefinitely. These backups are included in your standard iCloud device backup if you have iCloud Backup enabled in your iPad's Settings. Backup management, including restore, is available within the app under Settings.</p>
     </section>
     <section>
-        <h2>Bible Text</h2>
-        <p>The NASB 1995 Bible text is stored locally in a read-only database on your device. It is never uploaded, synced, or transmitted over the network.</p>
+        <h2>Bible Text and Reference Data</h2>
+        <p>The NASB 1995 Bible text, interlinear Greek/Hebrew/Aramaic data, cross-references, footnotes, and lexicon entries are stored locally in a read-only database that ships inside the app. This data is never uploaded, synced, or transmitted over the network, and it is never modified by the app.</p>
     </section>
     <section>
         <h2>Analytics, Advertising, and Tracking</h2>
-        <p>WrittenWord contains no analytics, advertising, crash reporting, or tracking of any kind. The app does not collect usage data or behavioral information. Nothing is sent anywhere automatically.</p>
+        <p>WrittenWord contains no analytics, advertising, crash reporting, or tracking of any kind. The app does not collect usage data or behavioral information. The only thing it can ever send automatically is the annotation diagnostics record described below, and only if you turn that on.</p>
+        <p>The app's privacy manifest (<code>PrivacyInfo.xcprivacy</code>) declares no tracking and no tracking domains. It declares one collected data type, Other Diagnostic Data, not linked to you and not used for tracking, for the optional automatic sharing described below. It declares two required-reason API categories: app preferences (<code>UserDefaults</code>) for storing your settings, and file timestamps for managing local backups.</p>
     </section>
     <section>
         <h2>Annotation Diagnostics</h2>
         <p>Some readers have found that their handwritten annotations appear in a different position than where they drew them. To help us find the cause, the app keeps a short record on your iPad of any time a chapter's handwriting changes position, found under Settings → Help → Annotation Diagnostics.</p>
-        <p>This record contains only the chapter reference, measurements in points of how far things moved or were positioned on the page, the zoom level, the number of pen strokes, and the moment it happened. It never contains the words in your notes, your handwriting itself, or anything identifying you or your iPad.</p>
-        <p>It stays on your device. It is not uploaded, synced, or transmitted, and we cannot see it. It leaves your iPad only if you open that screen, tap Share, and choose where to send it — for example, emailing it to support. Deleting the app deletes the record with it.</p>
+        <p>This record contains only the chapter reference, measurements in points of how far things moved or were positioned on the page, the zoom level, the number of pen strokes, and the moment it happened. When a movement wasn't caused by your own editing, the record also keeps a short timeline of what the app was doing in the 30 seconds before — for example the app opening or moving to the background, the page size changing, scrolling, the pencil touching down and lifting, undo and redo, and iCloud sync activity — as event types, measurements, and times. It never contains the words in your notes, your handwriting itself, or anything identifying you or your iPad.</p>
+        <p>It is kept in your device's standard app preferences, alongside your other settings. By default it stays on your device: it is not uploaded, synced, or transmitted, and we cannot see it. It leaves your iPad in only two ways, both your choice:</p>
+        <ul>
+            <li><strong>Share.</strong> Open that screen, tap Share, and choose where to send it — for example, emailing it to support.</li>
+            <li><strong>Share Automatically.</strong> If you turn this on — in that screen, or when the app offers it after your notes have moved unexpectedly — the record is sent to WrittenWord's developers through Apple's CloudKit public database whenever it contains a movement you didn't make yourself. Each report contains the record described above plus the app version, the iPadOS version, the iPad model (for example “iPad14,5”), and a random identifier created by the app so that reports from the same iPad can be read together. That identifier is not linked to you, your Apple Account, or your iPad's hardware identifiers. Reports require iCloud sign-in to send, are stored on Apple's servers, are readable only by WrittenWord's developers, and are used only to find and fix this problem. You can turn automatic sharing off at any time in the same screen; nothing more is sent after that.</li>
+        </ul>
+        <p>Deleting the app deletes the on-device record with it. To ask us to delete reports already sent, email us with your request.</p>
+    </section>
+    <section>
+        <h2>Third-Party Services</h2>
+        <p>The only third-party service used is Apple's CloudKit, for iCloud sync and, if you turn it on, automatic diagnostics sharing, as described above. No other third-party services, SDKs, or APIs are used, and the app bundles no third-party software dependencies. Apart from CloudKit, WrittenWord makes no network requests.</p>
     </section>
     <section>
         <h2>Children's Privacy</h2>
         <p>WrittenWord does not collect personal information from anyone, including children.</p>
     </section>
     <section>
-        <h2>Third-Party Services</h2>
-        <p>The only third-party service used is Apple's CloudKit for iCloud sync, as described above. No other third-party services, SDKs, or APIs are used.</p>
+        <h2>Deleting Your Data</h2>
+        <p>Deleting the app from your iPad removes all locally stored study data and backups. To remove synced data from iCloud, delete the app's data from your iCloud account in your device's Settings under your Apple Account → iCloud.</p>
     </section>
     <section>
         <h2>Changes</h2>
